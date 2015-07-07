@@ -1,4 +1,4 @@
-(function (require, define) {
+(function (define) {
     'use strict';
     define("js/student_account/views/finish_auth_factory",
         ['jquery', 'underscore', 'backbone', 'js/student_account/views/FinishAuthView'],
@@ -9,4 +9,4 @@
             };
         }
     );
-}).call(this, require || RequireJS.require, define || RequireJS.define);
+}).call(this, define || RequireJS.define);
