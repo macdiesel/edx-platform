@@ -53,7 +53,8 @@
             'backbone': 'empty:',
             'underscore': 'empty:',
             'logger': 'empty:',
-            'URI': 'empty:'
+            'URI': 'empty:',
+            'utility': 'empty:'
         },
         /**
          * If shim config is used in the app during runtime, duplicate the config
