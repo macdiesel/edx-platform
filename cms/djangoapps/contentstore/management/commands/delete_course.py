@@ -39,9 +39,9 @@ class Command(BaseCommand):
 
         if len(args) == 1:
             if args[0] == 'commit':
-                raise CommandError("Delete_courses requires a <course_id> argument. [org/number/run]")
+                raise CommandError("Delete_course requires a course_id <org/number/run> argument.")
             else:
-                raise CommandError("Delete_courses requires a commit argument at the end")
+                raise CommandError("Delete_course requires a commit argument at the end")
         elif len(args) == 2:
             try:
                 course_key = CourseKey.from_string(args[0])
@@ -51,7 +51,7 @@ class Command(BaseCommand):
                 except InvalidKeyError:
                     raise CommandError("Invalid course_key: '%s'. Proper syntax: 'org/number/run commit' " % args[0])
             if args[1] != 'commit':
-                raise CommandError("Delete courses requires a commit argument at the end")
+                raise CommandError("Delete_course requires a commit argument at the end")
 
         commit = False
         if len(args) == 2:
