@@ -29,8 +29,7 @@ class Command(BaseCommand):
             try:
                 course_key = SlashSeparatedCourseKey.from_deprecated_string(args[0])
             except InvalidKeyError:
-                raise CommandError("Invalid course_key: '%s'. \
-                                    Proper syntax: 'org/number/run commit' " % args[0])
+                raise CommandError("Invalid course_key: '%s'. " % args[0])
 
         if not modulestore().get_course(course_key):
             raise CommandError("Course with %s key not found." % args[0])
