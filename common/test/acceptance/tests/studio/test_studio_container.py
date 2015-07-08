@@ -1081,14 +1081,22 @@ class ProblemCategoryTabsTest(ContainerBase):
     def test_correct_tabs_present(self):
         """
         Scenario: Verify that correct tabs are present in problem category.
+
+        Given I am a staff user
+        When I go to unit page
+        Then I only see `Common Problem Types` and `Advanced` tabs in `problem` category
         """
         self.go_to_unit_page()
         page = ContainerPage(self.browser, None)
-        self.assertTrue('Common Problems with Hints and Feedback' not in page.get_category_tab_names('problem'))
+        self.assertEqual(page.get_category_tab_names('problem'), ['Common Problem Types', 'Advanced'])
 
     def test_common_problem_types_tab(self):
         """
         Scenario: Verify that correct components are present in Common Problem Types tab.
+
+        Given I am a staff user
+        When I go to unit page
+        Then I see correct components under `Common Problem Types` tab in `problem` category
         """
         self.go_to_unit_page()
         page = ContainerPage(self.browser, None)
