@@ -116,12 +116,10 @@
                 }, 'YouTube API is loaded', 3000);
 
                 window.YT = jasmine.YT;
-                // Stub YouTube API.
-                window.onYouTubeIframeAPIReady();
 
                 // Call the callback that must be called when YouTube API is
                 // loaded. By specification.
-                //window.onYouTubeIframeAPIReady();
+                window.onYouTubeIframeAPIReady();
 
                 runs(function () {
                     // If YouTube API is not loaded, then the code will should create

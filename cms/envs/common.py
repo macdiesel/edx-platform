@@ -123,7 +123,7 @@ FEATURES = {
     'ADVANCED_SECURITY': False,
 
     # Turn off Video Upload Pipeline through Studio, by default
-    'ENABLE_VIDEO_UPLOAD_PIPELINE': True,
+    'ENABLE_VIDEO_UPLOAD_PIPELINE': False,
 
 
     # Is this an edX-owned domain? (edx.org)
@@ -174,10 +174,10 @@ FEATURES = {
     'ENABLE_TEAMS': False,
 
     # Show video bumper in Studio
-    'ENABLE_VIDEO_BUMPER': True,
+    'ENABLE_VIDEO_BUMPER': False,
 
     # How many seconds to show the bumper again, default is 7 days:
-    'SHOW_BUMPER_PERIODICITY': 10,
+    'SHOW_BUMPER_PERIODICITY': 7 * 24 * 3600,
 
     # Enable credit eligibility feature
     'ENABLE_CREDIT_ELIGIBILITY': ENABLE_CREDIT_ELIGIBILITY,

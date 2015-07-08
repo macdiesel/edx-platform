@@ -10,15 +10,14 @@
  * @module Initialize
  */
 // TODO this is temporary hack to run the jasmine tests
-//(function(requirejs, define) {
-//    requirejs.config({
-//        paths: {
-//            'moment': 'xmodule/include/common_static/js/vendor/moment.min'
-//        }
-//    });
-//
-//}).call(this, RequireJS.requirejs, define);
+(function(requirejs, define) {
+    requirejs.config({
+        paths: {
+            'moment': 'xmodule/include/common_static/js/vendor/moment.min'
+        }
+    });
 
+}).call(this, RequireJS.requirejs, define);
 
 (function (requirejs, require, define) {
 
@@ -229,6 +228,11 @@ function (VideoPlayer, i18n, _moment) {
             state.el.trigger('youtube_availability', [state.youtubeIsAvailable]);
         }, state.config.ytTestTimeout);
 
+    }
+
+    function loadYouTubeIFrameAPI(scriptTag) {
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
     }
 
     // function _configureCaptions(state)
@@ -485,7 +489,7 @@ function (VideoPlayer, i18n, _moment) {
         );
 
         // When the youtube link doesn't work for any reason
-        // (for example, the great firewall in china) any
+        // (for example, firewall) any
         // alternate sources should automatically play.
         if (!_prepareHTML5Video(this)) {
             console.log(
@@ -515,10 +519,6 @@ function (VideoPlayer, i18n, _moment) {
         }
     }
 
-    function loadYouTubeIFrameAPI(scriptTag) {
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag);
-    }
     // function initialize(element)
     // The function set initial configuration and preparation.
 

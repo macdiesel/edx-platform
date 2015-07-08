@@ -114,7 +114,7 @@ def get_bumper_sources(video):
         )
         return []
 
-    return ['https://dl-web.dropbox.com/get/Public/Overshot%20Frontflip%20Video%20-%20Pinkbike_13_41_24.mp4?_subject_uid=8056841&w=AAAKbp6fbqVeplw850cnsyndkRFJK67gQXKhhFtXR16FiQ&dl=1']
+    return bumper_sources
 
 
 def bumper_metadata(video, sources):
