@@ -233,7 +233,7 @@ multi_line_output = 3
 skip = ["envs", "migrations"]
 
 [tool.importlinter]
-root_packages = ["lms", "cms", "openedx", "openedx_content"]
+root_packages = ["lms", "cms", "openedx", "openedx_content", "openedx_catalog"]
 include_external_packages = true
 # Our custom contract which checks that we're only importing from 'api.py'
 # for participating packages.
@@ -356,11 +356,13 @@ isolated_apps = [
     "openedx.core.djangoapps.olx_rest_api",
     "openedx.core.djangoapps.xblock",
     "openedx.core.lib.xblock_serializer",
+    "openedx_catalog",
 ]
 allowed_modules = [
     # Only imports from api.py and data.py are allowed elsewhere in the code
     # See https://open-edx-proposals.readthedocs.io/en/latest/best-practices/oep-0049-django-app-patterns.html#api-py
     "api",
+    "models_api",
     "data",
     "tests",
 ]
