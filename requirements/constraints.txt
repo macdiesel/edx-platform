@@ -136,6 +136,12 @@ django-debug-toolbar<6.0.0
 cryptography<46.0.0
 pact-python<3.0.0
 
+# Date: 2026-03-30
+# pip-tools 7.5.x fails with newer pip releases during pip-compile with:
+# AttributeError: 'InstallRequirement' object has no attribute 'use_pep517'
+# Keep pip on the last known-good series.
+pip<24.3
+
 # Date 2026-01-13
 # Sphinx-autoapi changed the version of astroid it needs
 # but the newer version is not compatible with the current pylint version
